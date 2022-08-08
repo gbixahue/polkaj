@@ -5,6 +5,8 @@ import io.emeraldpay.polkaj.json.RuntimeVersionJson;
 import io.emeraldpay.polkaj.json.StorageChangeSetJson;
 import io.emeraldpay.polkaj.types.ByteData;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,7 +59,7 @@ public class StandardSubscriptions {
         if (keys.isEmpty()) {
             return storage();
         }
-        return SubscribeCall.create(StorageChangeSetJson.class, PolkadotMethod.STATE_SUBSCRIBE_STORAGE, PolkadotMethod.STATE_UNSUBSCRIBE_STORAGE, List.of(keys));
+        return SubscribeCall.create(StorageChangeSetJson.class, PolkadotMethod.STATE_SUBSCRIBE_STORAGE, PolkadotMethod.STATE_UNSUBSCRIBE_STORAGE, Arrays.asList(keys));
     }
 
     public SubscribeCall<StorageChangeSetJson> storage(ByteData key) {

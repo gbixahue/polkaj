@@ -8,7 +8,5 @@ include "polkaj-ss58",
         "polkaj-common-types",
         "polkaj-api-base",
         "polkaj-api-http",
-        "polkaj-api-ws",
-        "polkaj-tx",
-        "polkaj-adapter-tests"
+        "polkaj-tx"
 

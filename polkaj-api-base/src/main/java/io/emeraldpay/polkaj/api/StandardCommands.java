@@ -132,9 +132,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<Hash256> stateGetStorageHash(ByteData key, Hash256 at) {
-        List<Object> params = at == null ? List.of(key) : List.of(key, at);
+        List<Object> params = at == null ? Arrays.asList(key) : Arrays.asList(key, at);
         return RpcCall.create(Hash256.class, PolkadotMethod.STATE_GET_STORAGE_HASH, params);
     }
 
@@ -144,9 +144,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<Long> stateGetStorageSize(ByteData key, Hash256 at) {
-        List<Object> params = at == null ? List.of(key) : List.of(key, at);
+        List<Object> params = at == null ? Arrays.asList(key) : Arrays.asList(key, at);
         return RpcCall.create(Long.class, PolkadotMethod.STATE_GET_STORAGE_SIZE, params);
     }
 
@@ -157,9 +157,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<ByteData> stateCall(String method, ByteData data, Hash256 at) {
-        List<Object> params = at == null ? List.of(method, data) : List.of(method, data, at);
+        List<Object> params = at == null ? Arrays.asList(method, data) : Arrays.asList(method, data, at);
         return RpcCall.create(ByteData.class, PolkadotMethod.STATE_CALL, params);
     }
 
@@ -172,9 +172,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<List<ByteData>> stateGetChildKeys(ByteData childStorageKey, ByteData childDefinition, long childType, ByteData key, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(childStorageKey, childDefinition, childType, key));
+        List<Object> params = new ArrayList<>(Arrays.asList(childStorageKey, childDefinition, childType, key));
         if (at != null) {
             params.add(at);
         }
@@ -190,9 +190,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<ByteData> stateGetStorageData(ByteData childStorageKey, ByteData childDefinition, long childType, ByteData key, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(childStorageKey, childDefinition, childType, key));
+        List<Object> params = new ArrayList<>(Arrays.asList(childStorageKey, childDefinition, childType, key));
         if (at != null) {
             params.add(at);
         }
@@ -208,9 +208,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<Hash256> stateGetChildStorageHash(ByteData childStorageKey, ByteData childDefinition, long childType, ByteData key, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(childStorageKey, childDefinition, childType, key));
+        List<Object> params = new ArrayList<>(Arrays.asList(childStorageKey, childDefinition, childType, key));
         if (at != null) {
             params.add(at);
         }
@@ -226,9 +226,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<Long> stateGetChildStorageSize(ByteData childStorageKey, ByteData childDefinition, long childType, ByteData key, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(childStorageKey, childDefinition, childType, key));
+        List<Object> params = new ArrayList<>(Arrays.asList(childStorageKey, childDefinition, childType, key));
         if (at != null) {
             params.add(at);
         }
@@ -243,9 +243,9 @@ public class StandardCommands {
      * @param at block (optional)
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<List<ByteData>> stateGetKeys(ByteData key, int count, ByteData startKey, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(key, count));
+        List<Object> params = new ArrayList<>(Arrays.asList(key, count));
         if (startKey != null) {
             params.add(startKey);
         }
@@ -256,7 +256,7 @@ public class StandardCommands {
     }
 
     public RpcCall<ReadProofJson> stateGetReadProof(List<ByteData> keys, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(keys));
+        List<Object> params = new ArrayList<>(Arrays.asList(keys));
         if (at != null) {
             params.add(at);
         }
@@ -270,9 +270,9 @@ public class StandardCommands {
      * @param toBlock to block
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<List<ByteData>> stateQueryStorage(List<ByteData> keys, Hash256 fromBlock, Hash256 toBlock) {
-        List<Object> params = new ArrayList<>(List.of(keys, fromBlock));
+        List<Object> params = new ArrayList<>(Arrays.asList(keys, fromBlock));
         if (toBlock != null) {
             params.add(toBlock);
         }
@@ -285,9 +285,9 @@ public class StandardCommands {
      * @param at block
      * @return command
      */
-    @Deprecated(forRemoval = true)
+    @Deprecated()
     public RpcCall<List<ByteData>> stateQueryStorageAt(List<ByteData> keys, Hash256 at) {
-        List<Object> params = new ArrayList<>(List.of(keys));
+        List<Object> params = new ArrayList<>(Arrays.asList(keys));
         if (at != null) {
             params.add(at);
         }
