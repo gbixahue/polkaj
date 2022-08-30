@@ -11,7 +11,7 @@ repositories {
 
 allprojects {
     group = 'io.emeraldpay.polkaj'
-    version = "0.1.0"
+    version = "0.1.1"
 
     repositories {
         google()
@@ -29,8 +29,8 @@ task syncJars(type: Sync) {
 }
 
 
-java.sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 jar {
     from {

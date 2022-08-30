@@ -24,6 +24,10 @@ compileTestKotlin {
     }
 }
 
+java {
+    withSourcesJar()
+}
+
 dependencies {
     api project(":polkaj-json-types")
     api project(":polkaj-api-base")
