@@ -35,6 +35,11 @@ public abstract class SS58Type {
         public static Network SUBSTRATE = new Network(0b00101010);
         public static Network SUBSTRATE_SECONDARY = new Network(0b00101011);
 
+        // ALIASES
+        public static Network POLKADOT = LIVE;
+        public static Network WESTEND = SUBSTRATE;
+        public static Network KUSAMA = CANARY;
+
         private static Network[] ALL = {
                 LIVE, LIVE_SECONDARY,
                 CANARY, CANARY_SECONDARY,
