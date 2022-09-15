@@ -1,16 +1,17 @@
 package io.emeraldpay.polkaj.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.emeraldpay.polkaj.types.DotAmount;
 
 import java.util.Objects;
+
+import io.emeraldpay.polkaj.types.DotAmount;
 
 public class RuntimeDispatchInfoJson {
 
     @JsonProperty("class")
     private DispatchClass dispatchClass;
     private DotAmount partialFee;
-    private Long weight;
+    private Weight weight;
 
     public DispatchClass getDispatchClass() {
         return dispatchClass;
@@ -28,11 +29,11 @@ public class RuntimeDispatchInfoJson {
         this.partialFee = partialFee;
     }
 
-    public Long getWeight() {
+    public Weight getWeight() {
         return weight;
     }
 
-    public void setWeight(Long weight) {
+    public void setWeight(Weight weight) {
         this.weight = weight;
     }
 
@@ -58,5 +59,10 @@ public class RuntimeDispatchInfoJson {
         OPERATIONAL,
         @JsonProperty("mandatory")
         MANDATORY
+    }
+
+    public static class Weight {
+        @JsonProperty("ref_time")
+        Long refTime;
     }
 }
